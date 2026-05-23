@@ -579,12 +579,43 @@
     }
 
     @media (max-width: 768px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-      .module-inner { padding: 0 1.5rem; }
+
+      .hero-blob-1, .hero-blob-2,
+      .hero-blob-3, .hero-blob-4 {
+        width: 260px; height: 260px;
+      }
+      .hero-logo img { width: 180px; }
+
+      .module-inner { padding: 0 1.2rem; }
+
+      .palette-strip {
+        flex-wrap: wrap;
+        gap: .4rem;
+      }
+      .swatch {
+        flex: 1 1 calc(33% - .4rem);
+        min-width: 80px;
+        font-size: .6rem;
+      }
+
       .featured-block { grid-template-columns: 1fr; gap: 2rem; }
       .featured-block.reverse { direction: ltr; }
+
+      .card-grid { grid-template-columns: 1fr; }
+
+      .tools-row { flex-direction: column; gap: .8rem; }
+
+      .profile-hero { padding: 2rem 1.2rem; }
+      .profile-hero h3 { font-size: 1.4rem; }
+
+      .steps { padding: 0; }
+
       footer { padding: 4rem 1.5rem; }
+      footer .footer-brand { font-size: 1.8rem; }
     }
   </style>
 </head>
