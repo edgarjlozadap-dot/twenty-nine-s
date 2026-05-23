@@ -82,41 +82,47 @@
       overflow: hidden;
     }
 
-    /* Dot grid */
+    /* Dot grid — gris con más contraste */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(circle, rgba(37,99,235,.18) 1.5px, transparent 1.5px);
-      background-size: 36px 36px;
+      background-image: radial-gradient(circle, rgba(0,0,0,.22) 1.8px, transparent 1.8px);
+      background-size: 32px 32px;
       z-index: 0;
     }
 
-    /* Blobs difusos animados */
+    /* Blobs difusos — 4 esquinas */
     .hero-blob {
       position: absolute;
       border-radius: 50%;
       filter: blur(80px);
-      opacity: .45;
+      opacity: .5;
       z-index: 0;
     }
     .hero-blob-1 {
-      width: 520px; height: 520px;
+      width: 480px; height: 480px;
       background: radial-gradient(circle, #bfdbfe, transparent 70%);
       top: -120px; left: -100px;
       animation: blobFloat 10s ease-in-out infinite;
     }
     .hero-blob-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, #dbeafe, transparent 70%);
-      bottom: -80px; right: -60px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, #bfdbfe, transparent 70%);
+      bottom: -120px; right: -100px;
       animation: blobFloat 13s ease-in-out infinite reverse;
     }
     .hero-blob-3 {
-      width: 280px; height: 280px;
-      background: radial-gradient(circle, #eff6ff, transparent 70%);
-      top: 40%; left: 60%;
-      animation: blobFloat 8s ease-in-out infinite 2s;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, #bfdbfe, transparent 70%);
+      top: -120px; right: -100px;
+      animation: blobFloat 11s ease-in-out infinite 1s;
+    }
+    .hero-blob-4 {
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, #bfdbfe, transparent 70%);
+      bottom: -120px; left: -100px;
+      animation: blobFloat 9s ease-in-out infinite 2s reverse;
     }
 
     @keyframes blobFloat {
@@ -603,6 +609,7 @@
     <div class="hero-blob hero-blob-1"></div>
     <div class="hero-blob hero-blob-2"></div>
     <div class="hero-blob hero-blob-3"></div>
+    <div class="hero-blob hero-blob-4"></div>
     <div class="hero-logo">
       <img src="assets/logo.png" alt="Twenty Nine S Logo">
     </div>
