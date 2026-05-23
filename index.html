@@ -520,7 +520,7 @@
     /* ─── REVEAL ANIMATIONS ─── */
     .reveal {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(var(--ty, 40px));
       transition: opacity .8s ease, transform .8s ease;
     }
 
@@ -531,7 +531,7 @@
 
     .reveal-left {
       opacity: 0;
-      transform: translateX(-40px);
+      transform: translateX(var(--tx, -40px));
       transition: opacity .8s ease, transform .8s ease;
     }
 
@@ -897,6 +897,17 @@
           e.target.classList.add('visible');
         } else {
           e.target.classList.remove('visible');
+          const rect = e.target.getBoundingClientRect();
+          const isAbove = rect.top < 0;
+          if (e.target.classList.contains('reveal')) {
+            e.target.style.setProperty('--ty', isAbove ? '-40px' : '40px');
+          }
+          if (e.target.classList.contains('reveal-left')) {
+            e.target.style.setProperty('--tx', '-40px');
+          }
+          if (e.target.classList.contains('reveal-right')) {
+            e.target.style.setProperty('--tx', '40px');
+          }
         }
       });
     }, { threshold: 0.15 });
